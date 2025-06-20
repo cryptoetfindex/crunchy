@@ -32,7 +32,8 @@
 //! * `limit_2048`
 
 #![cfg_attr(not(feature = "std"), no_std)]
-
+#[cfg_attr(target_os = "windows", allow(unused_imports))]
+use crunchy as _;
 #[cfg(target_os = "windows")]
 include!(concat!(env!("OUT_DIR"), "\\lib.rs"));
 include!(concat!(env!("OUT_DIR"), env!("CRUNCHY_LIB_SUFFIX")));
